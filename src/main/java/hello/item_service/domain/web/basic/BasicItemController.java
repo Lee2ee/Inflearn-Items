@@ -134,4 +134,9 @@ public class BasicItemController {
         return "redirect:/basic/items/{itemId}";
     }
 
+    @DeleteMapping("/{itemId}")
+    public String deleteItem(@PathVariable("itemId") Long itemId) {
+        itemRepository.delete(itemId);
+        return "redirect:/basic/items";
+    }
 }
